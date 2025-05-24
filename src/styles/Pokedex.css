@@ -244,18 +244,65 @@ body.landing-page-body {
   margin-top: auto; /* Push controls to the bottom of the panel */
 }
 
+.d-pad-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+}
+
+.d-pad-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+}
+
 .d-pad-button {
-  width: 30px; height: 30px;
+  width: 30px; 
+  height: 30px;
   background-color: var(--pokedex-button-dark-grey);
   border: 2px solid black;
-  display: flex; align-items: center; justify-content: center;
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
   color: var(--pokedex-text-light);
   font-size: 1.2em;
   cursor: pointer;
+  transition: all 0.1s ease;
 }
-.d-pad-up { grid-column: 2; border-radius: 5px 5px 0 0; }
-.d-pad-down { grid-column: 2; grid-row: 2; border-radius: 0 0 5px 5px; }
-/* For a more cross-like D-pad, you'd need more complex styling or SVG */
+
+.d-pad-button:hover {
+  background-color: var(--pokedex-button-light-grey);
+  color: var(--pokedex-button-dark-grey);
+}
+
+.d-pad-button:active {
+  transform: scale(0.95);
+}
+
+.d-pad-up { 
+  border-radius: 8px 8px 2px 2px; 
+}
+
+.d-pad-down { 
+  border-radius: 2px 2px 8px 8px; 
+}
+
+.d-pad-left { 
+  border-radius: 8px 2px 2px 8px; 
+}
+
+.d-pad-right { 
+  border-radius: 2px 8px 8px 2px; 
+}
+
+.d-pad-center {
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+}
 
 .action-button-blue {
   width: 50px; height: 50px; /* Slightly smaller */
@@ -436,7 +483,10 @@ body.landing-page-body {
   .shiny-button { font-size: 0.65em; padding: 4px 8px; }
 
   .right-panel-controls { gap: 8px; }
-  .d-pad-button { width: 28px; height: 28px; }
+  .d-pad-container { gap: 1px; }
+  .d-pad-row { gap: 1px; }
+  .d-pad-button { width: 28px; height: 28px; font-size: 1.1em; }
+  .d-pad-center { width: 28px; height: 28px; }
   .action-button-blue { width: 50px; height: 50px; }
   .action-button-red { width: 40px; height: 40px; }
   .small-green-rect-button { width: 38px; height: 22px; }
@@ -494,7 +544,10 @@ body.landing-page-body {
     gap: 5px; /* Further reduced gap for mobile */
     padding-top: 3px;
   }
-  .d-pad-button { width: 22px; height: 22px; font-size: 1em; }
+  .d-pad-container { gap: 1px; }
+  .d-pad-row { gap: 1px; }
+  .d-pad-button { width: 22px; height: 22px; font-size: 0.9em; }
+  .d-pad-center { width: 22px; height: 22px; }
   .action-button-blue { width: 40px; height: 40px; }
   .action-button-red { width: 30px; height: 30px; }
   .small-green-rect-button { width: 30px; height: 18px; }

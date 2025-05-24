@@ -41,7 +41,7 @@ const LandingPage = () => {
 
   const pokedexVariants = {
     closed: { scale: 0.8, opacity: 0.8 }, // Initial state before opening, no tilt
-    open: { scale: 1, opacity: 1, transition: { duration: 0.7, ease: [0.6, 0.05, -0.01, 0.9] } } // Smooth opening
+    open: { scale: 1, opacity: 1, transition: { duration: 5, ease: [0.6, 0.05, -0.01, 0.9] } } // Smooth opening
   };
 
   const inputContainerVariants = {
@@ -127,8 +127,8 @@ const LandingPage = () => {
             <p>This advanced Pokédex, model Kanto-DX, provides comprehensive data on Pokémon species.</p>
             <p>It includes habitat information, behavioral patterns, and battle statistics. Use the controls to navigate entries.</p>
           </div>
-          <div className="types-area">
-            {/* These could be dynamic later, for now static as per image */}
+          {/* These could be dynamic later, for now static as per image */}
+          {/* <div className="types-area">
             <div className="type-button type-poison">POISON</div>
             <div className="type-button type-grass">GRASS</div>
           </div>
@@ -136,17 +136,32 @@ const LandingPage = () => {
             <div className="evo-slot">I</div>
             <div className="evo-slot">II</div>
             <div className="evo-slot">III</div>
-          </div>
+          </div> */}
           <div className="moves-area">
             <p>Access detailed move sets, including type, power, accuracy, and PP. </p>
             <p>The Pokédex also records learned levels and potential TMs/HMs compatibility.</p>
           </div>
           <div className="right-panel-controls">
             <button className="action-button-blue" aria-label="Blue Action Button"></button>
-            <button className="d-pad-button d-pad-up" aria-label="D-pad Up">▲</button>
+            <div className="d-pad-container">
+              <div className="d-pad-row">
+                <div></div>
+                <button className="d-pad-button d-pad-up" aria-label="D-pad Up">▲</button>
+                <div></div>
+              </div>
+              <div className="d-pad-row">
+                <button className="d-pad-button d-pad-left" aria-label="D-pad Left">◀</button>
+                <div className="d-pad-center"></div>
+                <button className="d-pad-button d-pad-right" aria-label="D-pad Right">▶</button>
+              </div>
+              <div className="d-pad-row">
+                <div></div>
+                <button className="d-pad-button d-pad-down" aria-label="D-pad Down">▼</button>
+                <div></div>
+              </div>
+            </div>
             <button className="small-green-rect-button" aria-label="Small Green Button"></button>
             <div></div> {/* Grid spacer */}
-            <button className="d-pad-button d-pad-down" aria-label="D-pad Down">▼</button>
             <button className="action-button-red" aria-label="Red Action Button"></button>
           </div>
         </div>
